@@ -1,1 +1,6 @@
-### :point_right: This starter repo has moved to the [ionic-team/starters](https://github.com/ionic-team/starters/tree/master/ionic-angular/official/tabs) repo! :point_left:
+
+# Pico Y Placa Predictor App
+Pico y placa predictor developed using Ionic 3. 
+
+It allows the user when it is allowed to use his car inside  the city of Quito, Ecuador
+
