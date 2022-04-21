@@ -21,7 +21,8 @@ export class DateUtils{
      * @returns {Boolean}
     */
     public static isDateHoliday(date:Date):Boolean{
-        let monthName:string = this.months[date.getMonth()];
+        let monthNumber:number = date.getMonth();
+        let monthName:string = this.months[monthNumber];
         if(monthName in this.commonHolidays){
             let holidaysPerMonth:number[] = this.commonHolidays[monthName];
             return (holidaysPerMonth.indexOf(date.getDay()) !== -1)

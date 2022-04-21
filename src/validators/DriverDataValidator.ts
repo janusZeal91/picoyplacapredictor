@@ -1,4 +1,4 @@
-import { IValidator } from '../validators/IValidator';
+import { IValidator } from './IValidator';
 import { DateUtils } from '../utils/DateUtils';
 import { PicoYPlacaUtils } from '../utils/PicoYPlacaUtils';
 import { DriverData } from '../model/DriverData';
@@ -6,12 +6,16 @@ import { DriverData } from '../model/DriverData';
 /**
  * @author José Luis Escobar Cárdenas
  * @version 0.9
- * @summary Pico y Placa validator
+ * @summary DriverData validator under the rules of Pico&Placa
  * @implements {IValidator}
  */
 
-export class PicoYPlacaValidator implements IValidator<DriverData> {
+export class DriverDataValidator implements IValidator<DriverData> {
 
+    /** Checks if one driver is allowed to drive during Pico&Placa under current rules 
+     * @param {DriverData} driverData - DriversData object with all car and driver information
+     * @returns {Boolean} - returns true if Driver is allowed to drive with the specified info of DriversData, false otherwise
+    */
     validate(driverData: DriverData): Boolean {
 
         /*On the following scenarios circulation by the city is allowed

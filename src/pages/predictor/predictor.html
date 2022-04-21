@@ -18,20 +18,34 @@
     <ion-list>
       <ion-item>
         <ion-label color="primary" stacked>Placa</ion-label>
-        <ion-input formControlName="licensePlate" placeholder="Ingrese la placa de su auto" [(ngModel)]="licensePlate">
+        <ion-input formControlName="licensePlate" (ionChange)="toUpperCaseLicencesPlate(licensePlate)" maxlength="8"
+          placeholder="Ingrese la placa de su auto (Incluya el guión)" [(ngModel)]="licensePlate">
         </ion-input>
+      </ion-item>
+      <ion-item *ngIf="predictorForm.get('licensePlate').errors && predictorForm.get('licensePlate').dirty">
+        <p color="danger" ion-text>La placa ingresada no se encuentra en un formato admitido para Ecuador</p>
       </ion-item>
       <ion-item>
         <ion-label color="primary" stacked>Edad del Conductor</ion-label>
-        <ion-input formControlName="driverAge" placeholder="Ingrese la edad del conductor" [(ngModel)]="driverAge">
+        <ion-input formControlName="driverAge" type="number" maxlength="2" placeholder="Ingrese la edad del conductor"
+          [(ngModel)]="driverAge">
         </ion-input>
       </ion-item>
-      <ion-label color="primary" stacked>Fecha y Hora de Consulta/ion-label>
-        <ion-datetime cancelText="Cancelar" display-timezone="utc" doneText="Seleccionar"
-          formControlName="dateTimeDrive" displayFormat="D MMM YYYY H:mm" picker-format="MMMM YYYY H:mm"
-          [(ngModel)]="dateTimeDrive">
-        </ion-datetime>
-        <button ion-button block [disabled]="predictorForm.invalid" (click)="checkAvailability()">Consultar</button>
+      <ion-item *ngIf="predictorForm.get('driverAge').errors && predictorForm.get('driverAge').dirty">
+        <p color="danger" ion-text *ngIf="predictorForm.get('driverAge').hasError('required')">Complete el campo</p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" stacked>Fecha y Hora de Consulta</ion-label>
+          <ion-datetime cancelText="Cancelar"  doneText="Seleccionar" placeholder="Seleccione la fecha y hora de consulta"
+            formControlName="dateTimeDrive" displayFormat="D MMM YYYY H:mm" picker-format="MMMM YYYY H:mm"
+            [(ngModel)]="dateTimeDrive">
+          </ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="predictorForm.get('dateTimeDrive').errors && predictorForm.get('dateTimeDrive').dirty">
+        <p color="danger" ion-text *ngIf="predictorForm.get('driverAge').hasError('required')">Complete el campo</p>
+      </ion-item>
+
+      <button ion-button block [disabled]="predictorForm.invalid" (click)="checkAvailabilty()">Consultar</button>
     </ion-list>
 
 

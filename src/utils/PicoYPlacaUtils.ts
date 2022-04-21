@@ -8,7 +8,7 @@
 export class PicoYPlacaUtils {
 
     private static readonly weekday: string[] = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    private static readonly daysLicencePairAllowed: { [key: string]: Array<number> } = {
+    private static readonly daysLicencePairNotAllowed: { [key: string]: Array<number> } = {
         Monday: [1, 2],
         Tuesday: [3, 4],
         Wednesday: [5, 6],
@@ -44,23 +44,23 @@ export class PicoYPlacaUtils {
         //Get last digit of licence plate by getting the last character position 
         let lastDigitOfLicence: number = parseInt(licensePlate.slice(licensePlate.length - 1));
         //Get allowed digits pair on day 
-        let allowedDigitsOnDay: number[] = this.daysLicencePairAllowed[day];
-        //If digits are inside array of day selected the driver is allowed during Pico y Placa 
-        return (allowedDigitsOnDay.indexOf(lastDigitOfLicence) !== -1);
+        let allowedDigitsOnDay: number[] = this.daysLicencePairNotAllowed[day];
+        //If digits are inside array of day selected the driver is not allowed during Pico y Placa 
+        return !(allowedDigitsOnDay.indexOf(lastDigitOfLicence) !== -1);
     }
 
     /** 
         * @param {string} date - DateTime to evaluate if it is inside Pico&Placa active range
-        * @returns {Boolean} - True if time is inside Pico&Placa range, false otherwise.
+        * @returns {Boolean} - True if time is outside Pico&Placa range, false otherwise.
        */
     public static isTimeOutsidePicoPlacaRange(date: Date): Boolean {
-        let morningHourStart: Date = date;
+        let morningHourStart: Date = new Date(date.getTime())
         morningHourStart.setHours(7, 0, 0);
-        let morningHourLimit: Date = date;
+        let morningHourLimit: Date = new Date(date.getTime());
         morningHourLimit.setHours(9, 30, 0);
-        let eveningHourStart: Date = date;
+        let eveningHourStart: Date = new Date(date.getTime())
         eveningHourStart.setHours(16, 0, 0);
-        let eveningHourLimit: Date = date;
+        let eveningHourLimit: Date = new Date(date.getTime());
         eveningHourLimit.setHours(19, 30, 0);
         return !(((morningHourStart < date) && (morningHourLimit > date)) || ((eveningHourStart < date) && (eveningHourLimit > date)));
     }
