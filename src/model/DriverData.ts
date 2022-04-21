@@ -1,5 +1,11 @@
+/**
+ * @author José Luis Escobar Cárdenas
+ * @version 0.9
+ * @summary Driver's data class to contain information about the driver and his car
+ * @class
+ */
 
-class DriverData {
+export class DriverData {
     
     licencePlate:string;
     driversAge:number;
