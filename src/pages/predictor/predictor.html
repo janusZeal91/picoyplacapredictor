@@ -1,0 +1,39 @@
+<!--
+  Generated template for the PredictorPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Pico Y Placa Predictor</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="predictorForm">
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary" stacked>Placa</ion-label>
+        <ion-input formControlName="licensePlate" placeholder="Ingrese la placa de su auto" [(ngModel)]="licensePlate">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" stacked>Edad del Conductor</ion-label>
+        <ion-input formControlName="driverAge" placeholder="Ingrese la edad del conductor" [(ngModel)]="driverAge">
+        </ion-input>
+      </ion-item>
+      <ion-label color="primary" stacked>Fecha y Hora de Consulta/ion-label>
+        <ion-datetime cancelText="Cancelar" display-timezone="utc" doneText="Seleccionar"
+          formControlName="dateTimeDrive" displayFormat="D MMM YYYY H:mm" picker-format="MMMM YYYY H:mm"
+          [(ngModel)]="dateTimeDrive">
+        </ion-datetime>
+        <button ion-button block [disabled]="predictorForm.invalid" (click)="checkAvailability()">Consultar</button>
+    </ion-list>
+
+
+  </form>
+</ion-content>
