@@ -6,8 +6,8 @@ export class DateUtils{
     }
 
     public static isDateWeekend(date:Date):Boolean{
-        return true;
-        //TODO
+        let day:number = date.getDay();
+        return (day == 6 ||  day ==0);
     }
 
     public static isTimeOutsidePicoPlacaRange(date:Date):Boolean{

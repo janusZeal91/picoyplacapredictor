@@ -22,7 +22,7 @@ export class PicoYPlacaUtils {
     public static isLicenseAllowedOnHour(licensePlate: string, dateTimeDrive: Date):Boolean {
         //Get day from weekday array const based on current date
         let day: string = this.weekday[dateTimeDrive.getDay()];
-        //Get last digit of licences plate by getting the last character position 
+        //Get last digit of licence plate by getting the last character position 
         let lastDigitOfLicence:number = parseInt(licensePlate.slice(licensePlate.length-1));
         //Get allowed digits pair on day 
         let allowedDigitsOnDay: number[] = this.daysLicencePairAllowed[day];
