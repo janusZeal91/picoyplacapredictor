@@ -9,11 +9,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
  * @author José Luis Escobar Cárdenas
  * @version 0.9
  * @summary Controller class por Predictor Page
- */
+ */ 
 
 const DRIVER_ALLOWED_MSG = "Usted es libre de circular por la ciudad en las fechas y horas especificadas";
 const DRIVER_NOT_ALLOWED_MSG = "Usted NO PUEDE circular por la ciudad en las fechas y horas especificadas. Evite multas";
-const RESULT_TITLE = "Resultado";
+const RESULT_ALLOWED_TITLE = "¡CIRCULACIÓN LIBRE!";
+const RESULT_NOT_ALLOWED_TITLE = "¡CIRCULACIÓN RESTRINGIDA!";
 
 @IonicPage()
 @Component({
@@ -46,9 +47,9 @@ export class PredictorPage {
     let driverData = new DriverData(this.licensePlate, this.driverAge,dateDrive);
     let picoYPlacaValidator: IValidator<DriverData> = new DriverDataValidator();
     if (picoYPlacaValidator.validate(driverData)) {
-      this.showBasicAlert(DRIVER_ALLOWED_MSG, RESULT_TITLE);
+      this.showBasicAlert(DRIVER_ALLOWED_MSG, RESULT_ALLOWED_TITLE);
     } else {
-      this.showBasicAlert(DRIVER_NOT_ALLOWED_MSG, RESULT_TITLE);
+      this.showBasicAlert(DRIVER_NOT_ALLOWED_MSG, RESULT_NOT_ALLOWED_TITLE);
     }
   }
 
