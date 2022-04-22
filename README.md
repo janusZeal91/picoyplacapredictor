@@ -11,13 +11,15 @@ This program considers the following Pico & Placa rules
 * Drivers equal or over the age of 65 are allowed to move by car freely anyday, anytime. 
 * On holidays and weekends there is no restriction to move by car inside the city.
 * Licences Plates from Monday to Sunday have a restriction based on their last digit based on the following table during timeframes [07:00-09-30] - [16:00-19:30]: 
-Day          | Last Digit Not Allowed
------------  | --------- |
-Monday  | 1,2
-Tuesday  | 3,4
-Wednesday | 5,6
-Thursday  | 7,8
-Friday | 9,0
+
+| Day       | Licences not Allowed          
+| ------------- |:-------------:| 
+| Monday      | 1,2 | 
+| Tuesday      | 3,4      |
+| Wednesday | 5,6      |
+| Thursday | 7,8      |
+| Friday | 9,0      |
+
 
 # Building and Testing
 
