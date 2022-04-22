@@ -33,7 +33,7 @@ This app was developed using Ionic V3.9.2 and Node 10.19.0. Using a higher versi
     > nvm install 10.19.0
     > nvm use 10.19.0 
 
-# Install of required dependencies 
+# Install all required dependencies 
     > npm install --save 
 
 # Ionic 3 has an integrated developent live-server which can be used to deploy the app for testing by using command
