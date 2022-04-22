@@ -10,6 +10,7 @@ This program considers the following Pico & Placa rules
 
 * Drivers equal or over the age of 65 are allowed to move by car freely anyday, anytime. 
 * On holidays and weekends there is no restriction to move by car inside the city.
+* Diplimatic missions car members are exempt from Pico&Placa (Licence Plate starting with CD indentiifes a Diplomatic Mission Car) 
 * Licences Plates from Monday to Sunday have a restriction based on their last digit according to the following table during timeframes [07:00-09-30] - [16:00-19:30]: 
 
 | Day       | Licences not Allowed          
