@@ -10,7 +10,7 @@ This program considers the following Pico & Placa rules
 
 * Drivers equal or over the age of 65 are allowed to move by car freely anyday, anytime. 
 * On holidays and weekends there is no restriction to move by car inside the city.
-* Licences Plates from Monday to Sunday have a restriction based on their last digit based on the following table during timeframes [07:00-09-30] - [16:00-19:30]: 
+* Licences Plates from Monday to Sunday have a restriction based on their last digit according to the following table during timeframes [07:00-09-30] - [16:00-19:30]: 
 
 | Day       | Licences not Allowed          
 | ------------- |:-------------:| 
@@ -23,7 +23,7 @@ This program considers the following Pico & Placa rules
 
 # Building and Testing
 
-This app was developed using Ionic V3.9.2 and Node 10.19.0. Using a higher version of Nodes throws a compilation error due to incompatibility problems with some Ionic 3 libraries. 
+This app was developed using Ionic V3.9.2 and Node 10.19.0. Using a higher version of Node throws a compilation error due to incompatibility problems with some Ionic 3 libraries. 
 
 # If you don't already have Ionic installed:
     > npm install --save ionic@3.9.2 
@@ -36,7 +36,7 @@ This app was developed using Ionic V3.9.2 and Node 10.19.0. Using a higher versi
 # Install all required dependencies 
     > npm install --save 
 
-# Ionic 3 has an integrated developent live-server which can be used to deploy the app for testing by using command
+# Ionic 3 has an integrated development live-server which can be used to deploy the app for testing by using command
     > ionic serve 
 
 # All unit tests has been implemented using Karma and Jasmine. Run the tests by using 
